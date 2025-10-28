@@ -74,5 +74,14 @@ func main() {
 	}
 
 	fmt.Println(maps.Equal(myMap, anotherMap)) // true
+	nums := []int{3, 4, 5}
+	for i, j := range nums {
+		fmt.Println(i, j)
+	}
+	// j is the rune value of the character
+	// i is the byte index of the character in the string
+	for i, j := range "hello" {
+		fmt.Println(i, string(j))
+	}
 
 }
