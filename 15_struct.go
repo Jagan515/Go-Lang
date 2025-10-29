@@ -6,10 +6,21 @@ import (
 )
 
 // Step 1: Define the Person struct
+type order struct {
+	id   int64
+	name string
+}
+type customer struct {
+	ordername order
+	id        int
+	name      string
+	age       int
+}
 type Person struct {
 	name      string
 	age       int64
 	createdAt time.Time // stores creation time
+
 }
 
 // Step 2: Function to extract time details from a time.Time value
@@ -23,7 +34,9 @@ func extractTime(t time.Time) {
 // Attaching Behavior to Structs using Methods (Optional)
 // You can define methods on structs to give them behavior.
 // For example, a method to display person's info could be added here.
+
 // convenience method to display person info p
+// p Person indicate that the this function belongs to Person
 func (p Person) displayInfo() {
 	fmt.Printf("Name: %s, Age: %d, Created At: %s\n", p.name, p.age, p.createdAt.String())
 }
